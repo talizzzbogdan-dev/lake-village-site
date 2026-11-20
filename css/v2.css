@@ -1,6 +1,6 @@
 /* v2 — первый блок с плавными градиентами для широких мониторов */
 @media (min-width:861px){
-  .v2 .split{display:block;position:relative;overflow:hidden;overflow:clip;background:
+  .v2 .split{display:block;position:relative;background:
     radial-gradient(1000px 640px at 78% 12%,rgba(240,182,100,.20),transparent 62%),
     linear-gradient(165deg,#6b6c51,#585940)}
   .v2 .split__text{position:relative;z-index:3;width:min(52%,860px)}
