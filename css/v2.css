@@ -1,6 +1,6 @@
 /* v2 — первый блок с плавными градиентами для широких мониторов */
 @media (min-width:861px){
-  .v2 .split{display:block;position:relative;overflow:hidden;background:
+  .v2 .split{display:block;position:relative;overflow:hidden;overflow:clip;background:
     radial-gradient(1000px 640px at 78% 12%,rgba(240,182,100,.20),transparent 62%),
     linear-gradient(165deg,#6b6c51,#585940)}
   .v2 .split__text{position:relative;z-index:3;width:min(52%,860px)}
@@ -14,7 +14,7 @@
   .v2 .v2bg video{position:absolute;inset:-8%;width:116%;height:116%;object-fit:cover;filter:blur(46px) saturate(1.1) brightness(.85)}
   .v2 .v2bg::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(96,97,72,.55),rgba(96,97,72,.28) 55%,rgba(96,97,72,.4))}
   /* основной вертикальный ролик с растушёванными краями */
-  .v2 .vframe{position:absolute;inset:0;display:block;padding:0}
+  .v2 .vframe{position:absolute;inset:0;height:auto;display:block;padding:0}
   .v2 .vframe .vwrap{position:sticky;top:0;height:100svh;width:auto;margin-left:auto;margin-right:12%;aspect-ratio:9/16}
   .v2 .vwrap video{border-radius:0;box-shadow:none;background:transparent;
     -webkit-mask-image:linear-gradient(to right,transparent 0,#000 26%,#000 74%,transparent 100%),linear-gradient(to bottom,transparent 0,#000 16%,#000 84%,transparent 100%);
