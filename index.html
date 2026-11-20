@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Lake Village Belarus — загородный комплекс у озера</title>
 <meta name="description" content="Lake Village Belarus — загородный комплекс у озера: дома A-Frame и Barnhouse с купелями, ресторан, стеклянная оранжерея, пирс и пляж.">
-<meta name="theme-color" content="#0b1610">
+<meta name="theme-color" content="#5d5e45">
 <meta property="og:title" content="Lake Village Belarus">
 <meta property="og:description" content="Загородный комплекс у озера. Природа. Люди. События.">
 <meta property="og:image" content="assets/img/aerial-logo.webp">
@@ -13,6 +13,7 @@
 <link rel="preload" href="assets/fonts/cinzel-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="css/fonts.css">
 <link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/palette.css">
 </head>
 <body>
 <div class="progress" aria-hidden="true"><i></i></div>
@@ -79,18 +80,23 @@
 
   <div class="split__media">
     <div class="vframe">
-      <video id="heroVideo" autoplay muted loop playsinline preload="metadata" poster="assets/video/hero-poster.jpg">
-        <source src="assets/video/hero.webm" type="video/webm">
-        <source src="assets/video/hero.mp4" type="video/mp4">
-      </video>
-      <i class="corner c1"></i><i class="corner c2"></i><i class="corner c3"></i><i class="corner c4"></i>
+      <div class="vwrap">
+        <video id="heroVideo" autoplay muted loop playsinline preload="metadata" poster="assets/video/hero-poster.jpg">
+          <source src="assets/video/hero.webm" type="video/webm">
+          <source src="assets/video/hero.mp4" type="video/mp4">
+        </video>
+        <i class="corner c1"></i><i class="corner c2"></i><i class="corner c3"></i><i class="corner c4"></i>
+      </div>
     </div>
     <div class="glow" aria-hidden="true"></div>
   </div>
 </section>
 
+<!-- ============ MARQUEE ============ -->
+<div class="mq" aria-label="Проект в стадии разработки"><div class="mq__track" id="mqTrack"></div></div>
+
 <!-- ============ NUMBERS ============ -->
-<section class="nums" id="about">
+<section class="nums light" id="about">
   <div class="wrap nums__grid">
     <div class="stat reveal"><b><span data-count="5">0</span><sup>+</sup></b><span data-i18n="n1">гектаров территории у озера</span></div>
     <div class="stat reveal" style="--d:.1s"><b data-count="14">0</b><span data-i18n="n2">домов A-Frame и Barnhouse</span></div>
@@ -104,7 +110,7 @@
 </section>
 
 <!-- ============ INFRASTRUCTURE ============ -->
-<section class="infra" id="infra">
+<section class="infra light" id="infra">
   <div class="wrap">
     <header class="shead reveal">
       <span class="idx">01</span>
@@ -190,7 +196,7 @@
 </section>
 
 <!-- ============ MASTER PLAN ============ -->
-<section class="plan" id="plan">
+<section class="plan light" id="plan">
   <div class="wrap">
     <header class="shead reveal">
       <span class="idx">03</span>
@@ -225,7 +231,7 @@
 </section>
 
 <!-- ============ GALLERY MARQUEE ============ -->
-<section class="gal" aria-label="Gallery">
+<section class="gal light" aria-label="Gallery">
   <div class="gal__track" id="galTrack"></div>
 </section>
 

@@ -49,7 +49,7 @@
       iv_title:'Инвесторам', iv_sub:'Расскажем о проекте лично: условия, этапы и модель работы обсуждаем на встрече. Позвоните или оставьте контакт, и мы свяжемся.',
       pr_a:'Автор и руководитель проекта', pr_s:'Сергей', pr_c:'Контакты проекта', pr_d:'Дмитрий', pr_c2:'Контакты проекта',
       f_title:'Оставьте контакт', f_name:'Имя', f_contact:'Телефон или Telegram', f_msg:'Сообщение (необязательно)', f_send:'Отправить', f_ok:'Спасибо! Мы свяжемся с вами.',
-      rights:'Все права защищены',
+      rights:'Все права защищены', mq:'Проект в стадии разработки',
       objs:['Въездная группа','Парковка','Административный корпус / техзона','Вертолётная площадка','Детская площадка','Дома A-Frame','Дома Barnhouse','Пирс','Банкетная оранжерея','Ресторанно-банкетный холл'],
       routes:['Автомобильный маршрут','Пешеходный маршрут','Сервисный проезд','Гостевой доступ','Маршрут к пирсу','Маршрут к пляжу','Маршрут к оранжерее','Маршрут к ресторану','Маршрут к вертолётной площадке'],
       events:[['Свадьбы','Церемонии у воды и банкеты в стеклянной оранжерее.'],['Корпоративы','Банкеты, тимбилдинги, новогодние вечера, презентации компаний.'],['Государственные мероприятия','Официальные приёмы, форумы и церемонии любого масштаба.'],['Деловые конференции','Встречи, семинары и круглые столы на природе.'],['Презентации','Запуски продуктов, пресс-конференции, презентации брендов.'],['Форумы','Крупные форумы и съезды с большим числом гостей.'],['Частные события','Дни рождения, юбилеи, семейные торжества.'],['Выпускные вечера','Школьные и университетские выпускные, балы, церемонии.'],['Культурные события','Концерты, выставки, спектакли и фестивали.']],
@@ -95,7 +95,7 @@
       iv_title:'For investors', iv_sub:'We will present the project in person: terms, stages and the operating model are discussed at a meeting. Call us or leave your contact and we will get back to you.',
       pr_a:'Project author and lead', pr_s:'Sergey', pr_c:'Project contact', pr_d:'Dmitry', pr_c2:'Project contact',
       f_title:'Leave your contact', f_name:'Name', f_contact:'Phone or Telegram', f_msg:'Message (optional)', f_send:'Send', f_ok:'Thank you! We will get in touch.',
-      rights:'All rights reserved',
+      rights:'All rights reserved', mq:'Project in development',
       objs:['Entrance gate','Parking','Administration building / service area','Helipad','Children’s playground','A-Frame houses','Barnhouse houses','Pier','Banquet orangery','Restaurant & banquet hall'],
       routes:['Car route','Pedestrian route','Service road','Guest access','Route to the pier','Route to the beach','Route to the orangery','Route to the restaurant','Route to the helipad'],
       events:[['Weddings','Ceremonies by the water and banquets in the glass orangery.'],['Corporate events','Banquets, team building, New Year parties, company presentations.'],['Official events','Receptions, forums and ceremonies of any scale.'],['Business conferences','Meetings, seminars and round tables in nature.'],['Presentations','Product launches, press conferences, brand presentations.'],['Forums','Large forums and congresses with many guests.'],['Private events','Birthdays, anniversaries, family celebrations.'],['Graduations','School and university graduations, balls, ceremonies.'],['Cultural events','Concerts, exhibitions, performances and festivals.']],
@@ -141,6 +141,14 @@
     });
   }
 
+  function buildMarquee() {
+    var tr = $('#mqTrack'); if (!tr) return;
+    var item = '<span class="mq__item"><span>' + T[lang].mq + '</span><img src="assets/img/leaf.png" alt=""></span>';
+    var one = ''; for (var i = 0; i < 6; i++) one += item;
+    tr.innerHTML = one + one;
+    $('.mq').setAttribute('aria-label', T[lang].mq);
+  }
+
   function applyLang(l) {
     lang = l;
     document.documentElement.lang = l;
@@ -152,7 +160,7 @@
     $$('.lang button').forEach(function (b) { b.classList.toggle('on', b.dataset.lang === l); });
     var src = 'assets/img/map-' + l + '.webp';
     $('#mapImg').src = src; $('#mapBig').src = src;
-    buildLists();
+    buildLists(); buildMarquee();
     try { localStorage.setItem('lv_lang', l); } catch (e) {}
   }
 

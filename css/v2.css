@@ -1,0 +1,29 @@
+/* v2 — первый блок с плавными градиентами для широких мониторов */
+@media (min-width:861px){
+  .v2 .split{display:block;position:relative;overflow:hidden;background:
+    radial-gradient(1000px 640px at 78% 12%,rgba(240,182,100,.20),transparent 62%),
+    linear-gradient(165deg,#6b6c51,#585940)}
+  .v2 .split__text{position:relative;z-index:3;width:min(52%,860px)}
+  .v2 .h1{font-size:clamp(34px,3.7vw,66px)}
+  .v2 .panel{max-width:600px}
+  .v2 .split__media{position:absolute;top:0;bottom:0;right:0;width:72%;z-index:1;pointer-events:none}
+  /* размытая подложка из того же ролика — заполняет любую ширину */
+  .v2 .v2bg{position:sticky;top:0;height:100svh;overflow:hidden;
+    -webkit-mask-image:linear-gradient(to right,transparent 0,rgba(0,0,0,.55) 18%,#000 42%);
+            mask-image:linear-gradient(to right,transparent 0,rgba(0,0,0,.55) 18%,#000 42%)}
+  .v2 .v2bg video{position:absolute;inset:-8%;width:116%;height:116%;object-fit:cover;filter:blur(46px) saturate(1.1) brightness(.85)}
+  .v2 .v2bg::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(96,97,72,.55),rgba(96,97,72,.28) 55%,rgba(96,97,72,.4))}
+  /* основной вертикальный ролик с растушёванными краями */
+  .v2 .vframe{position:absolute;inset:0;display:block;padding:0}
+  .v2 .vframe .vwrap{position:sticky;top:0;height:100svh;width:auto;margin-left:auto;margin-right:12%;aspect-ratio:9/16}
+  .v2 .vwrap video{border-radius:0;box-shadow:none;background:transparent;
+    -webkit-mask-image:linear-gradient(to right,transparent 0,#000 26%,#000 74%,transparent 100%),linear-gradient(to bottom,transparent 0,#000 16%,#000 84%,transparent 100%);
+    -webkit-mask-composite:source-in;
+            mask-image:linear-gradient(to right,transparent 0,#000 26%,#000 74%,transparent 100%),linear-gradient(to bottom,transparent 0,#000 16%,#000 84%,transparent 100%);
+            mask-composite:intersect}
+  .v2 .corner,.v2 .glow{display:none}
+  /* плавный выход из блока в бегущую строку */
+  .v2 .split::after{content:"";position:absolute;left:0;right:0;bottom:0;height:26vh;z-index:4;pointer-events:none;background:linear-gradient(transparent,#474832)}
+  .v2 .split::before{content:"";position:absolute;left:0;right:0;top:0;height:18vh;z-index:4;pointer-events:none;background:linear-gradient(rgba(84,85,62,.7),transparent)}
+}
+@media (max-width:860px){ .v2 .v2bg{display:none} }
