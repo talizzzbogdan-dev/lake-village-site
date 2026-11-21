@@ -8,14 +8,13 @@
   .v2 .panel{max-width:600px}
   .v2 .split__media{position:absolute;top:0;bottom:0;right:0;width:72%;z-index:1;pointer-events:none}
   /* размытая подложка из того же ролика — заполняет любую ширину */
-  .v2 .v2bg{position:sticky;top:0;height:100svh;overflow:hidden;
+  .v2 .v2bg{position:-webkit-sticky;position:sticky;top:0;height:100vh;height:100svh;overflow:hidden;background:url(../assets/video/hero-bg.jpg) center/cover no-repeat;
     -webkit-mask-image:linear-gradient(to right,transparent 0,rgba(0,0,0,.55) 18%,#000 42%);
             mask-image:linear-gradient(to right,transparent 0,rgba(0,0,0,.55) 18%,#000 42%)}
-  .v2 .v2bg video{position:absolute;inset:-8%;width:116%;height:116%;object-fit:cover;filter:blur(46px) saturate(1.1) brightness(.85)}
   .v2 .v2bg::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(96,97,72,.55),rgba(96,97,72,.28) 55%,rgba(96,97,72,.4))}
   /* основной вертикальный ролик с растушёванными краями */
   .v2 .vframe{position:absolute;inset:0;height:auto;display:block;padding:0}
-  .v2 .vframe .vwrap{position:sticky;top:0;height:100svh;width:auto;margin-left:auto;margin-right:12%;aspect-ratio:9/16}
+  .v2 .vframe .vwrap{position:-webkit-sticky;position:sticky;top:0;height:100vh;height:100svh;width:auto;margin-left:auto;margin-right:12%;aspect-ratio:9/16}
   .v2 .vwrap video{border-radius:0;box-shadow:none;background:transparent;
     -webkit-mask-image:linear-gradient(to right,transparent 0,#000 26%,#000 74%,transparent 100%),linear-gradient(to bottom,transparent 0,#000 16%,#000 84%,transparent 100%);
     -webkit-mask-composite:source-in;
@@ -35,7 +34,6 @@
   .v2 .split__text .lead{font-size:clamp(18px,1.15vw,26px)}
   .v2 .split__text .eyebrow,.v2 .split__text .btn{font-size:clamp(12px,.75vw,16px)}
   .v2 .v2bg{mask-image:linear-gradient(to right,transparent 0,rgba(0,0,0,.2) 12%,rgba(0,0,0,.6) 30%,#000 55%)}
-  .v2 .v2bg video{filter:blur(70px) saturate(1) brightness(.8)}
   .v2 .v2bg::after{background:linear-gradient(90deg,rgba(96,97,72,.7),rgba(96,97,72,.45) 50%,rgba(96,97,72,.5))}
 }
 @media(min-width:1900px){

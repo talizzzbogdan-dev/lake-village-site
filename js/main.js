@@ -165,6 +165,9 @@
   }
 
   /* ---------- reveal ---------- */
+  if (!('IntersectionObserver' in window)) { document.documentElement.classList.add('fallback'); window.IntersectionObserver = function () { this.observe = this.unobserve = this.disconnect = function () {}; }; }
+  window.addEventListener('error', function () { document.documentElement.classList.add('fallback'); });
+  setTimeout(function () { if (!document.body.classList.contains('loaded')) document.documentElement.classList.add('fallback'); }, 3500);
   var io = new IntersectionObserver(function (en) {
     en.forEach(function (e) {
       if (e.isIntersecting) { e.target.classList.add('is-in'); io.unobserve(e.target); }
@@ -215,7 +218,7 @@
   /* ---------- светлячки ---------- */
   function fireflies() {
     var host = $('.split__text'); if (!host) return;
-    if (window.matchMedia('(max-width:860px)').matches) return;
+    if (window.matchMedia('(max-width:860px)').matches || window.matchMedia('(prefers-reduced-motion:reduce)').matches || (navigator.hardwareConcurrency && navigator.hardwareConcurrency <= 4) || (navigator.connection && navigator.connection.saveData)) return;
     for (var i = 0; i < 18; i++) {
       var f = document.createElement('i'); f.className = 'ff';
       f.style.left = (Math.random() * 90 + 3) + '%';
@@ -314,5 +317,17 @@
   window.addEventListener('resize', onScroll);
   window.addEventListener('load', function () { collectPar(); onScroll(); });
   requestAnimationFrame(function () { document.body.classList.add('loaded'); $('#heroScript').classList.add('is-in'); onScroll(); });
-  var hv = $('#heroVideo'); if (hv) { var p = hv.play(); if (p && p.catch) p.catch(function () {}); }
+  var hv = $('#heroVideo');
+  if (hv) {
+    var saveData = navigator.connection && navigator.connection.saveData;
+    var still = window.matchMedia('(prefers-reduced-motion:reduce)').matches || saveData;
+    if (still) { hv.removeAttribute('autoplay'); hv.pause(); }
+    else {
+      var p = hv.play(); if (p && p.catch) p.catch(function () {});
+      if ('IntersectionObserver' in window) new IntersectionObserver(function (en) {
+        en.forEach(function (e) { if (e.isIntersecting) { var q = hv.play(); if (q && q.catch) q.catch(function () {}); } else hv.pause(); });
+      }, { threshold: 0 }).observe(hv);
+      document.addEventListener('visibilitychange', function () { if (document.hidden) hv.pause(); else { var q = hv.play(); if (q && q.catch) q.catch(function () {}); } });
+    }
+  }
 })();
