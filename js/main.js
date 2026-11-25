@@ -4,8 +4,6 @@
 
   /* ---------- настройки ---------- */
   var COPYRIGHT_YEAR = 2026;          // в 2027 году заменить на 2027
-  var FORM_ENDPOINT = '';             // сюда адрес приёма заявок (n8n/Formspree). Пусто = отправка через WhatsApp
-  var FORM_WA = '375295773223';       // номер Александра для запасной отправки
 
   /* ---------- переводы ---------- */
   var T = {
@@ -102,6 +100,7 @@
       title:'Lake Village Belarus — a country resort by the lake', err:'Please fill in your name and contact'
     }
   };
+  Object.keys(T).forEach(function(l) { Object.assign(T[l], (window.LV_COPY || {})[l] || {}); });
   var ROUTE_COLORS = ['#f2f2f2','#f0d84a','#ee5a4a','#5fd36a','#4cc9e8','#f0d84a','#e9a3e8','#b66ae6','#d58af0'];
   var ROUTE_DASH = ['solid','dotted','dashed','dotted','dotted','dotted','dotted','dotted','dotted'];
   var GAL = ['pier-sunset','v-pier-dinner','v-barn-aerial','v-aerial-heli','fisher-dock','v-reception','v-interior','orangery','v-aframe-sunset','v-barn-tub2'];
@@ -115,22 +114,23 @@
   /* ---------- построение динамических блоков ---------- */
   function buildLists() {
     var objs = $('#objs'), routes = $('#routes'), eg = $('#egrid');
-    objs.innerHTML = ''; routes.innerHTML = ''; eg.innerHTML = '';
+    if (!eg) return;
+    if (objs) objs.innerHTML = ''; if (routes) routes.innerHTML = ''; eg.innerHTML = '';
     T[lang].objs.forEach(function (n, i) {
       var li = document.createElement('li');
       li.className = 'obj reveal is-in';
       li.innerHTML = '<img src="assets/thumbs/' + (i + 1) + '.webp" alt="" loading="lazy"><b>' + (i + 1) + '</b><span>' + n + '</span>';
-      objs.appendChild(li);
+      if (objs) objs.appendChild(li);
     });
     T[lang].routes.forEach(function (n, i) {
       var li = document.createElement('li');
       li.innerHTML = '<i style="border-top-style:' + ROUTE_DASH[i] + ';border-color:' + ROUTE_COLORS[i] + '"></i><span>' + n + '</span>';
-      routes.appendChild(li);
+      if (routes) routes.appendChild(li);
     });
     T[lang].events.forEach(function (e, i) {
       var d = document.createElement('div');
       d.className = 'ev reveal'; d.style.setProperty('--d', (i % 3) * 0.08 + 's');
-      d.innerHTML = '<i>0' + (i + 1) + '</i><h4>' + e[0] + '</h4><p>' + e[1] + '</p>';
+      d.innerHTML = '<img class="ev-image" src="assets/img/' + ['orangery','v-pier-dinner','v-restaurant','v-interior','v-reception','v-aerial-heli','pier-evening','pier-sunset','v-pier-aerial'][i] + '.webp" alt="" loading="lazy" decoding="async"><h4>' + e[0] + '</h4><p>' + e[1] + '</p>';
       eg.appendChild(d);
       io.observe(d);
       d.addEventListener('pointermove', function (ev) {
@@ -156,10 +156,13 @@
       var k = el.getAttribute('data-i18n');
       if (T[l][k] != null) el.textContent = T[l][k];
     });
-    document.title = T[l].title;
+    document.title = document.body.classList.contains('about-page') ? (l === 'ru' ? 'О нас — Lake Village Belarus' : 'Our team — Lake Village Belarus') : T[l].title;
     $$('.lang button').forEach(function (b) { b.classList.toggle('on', b.dataset.lang === l); });
     var src = 'assets/img/map-' + l + '.webp';
-    $('#mapImg').src = src; $('#mapBig').src = src;
+    window.LV_LANG = l;
+    document.querySelectorAll('[data-i18n-aria]').forEach(function(el){el.setAttribute('aria-label', T[l][el.dataset.i18nAria] || el.dataset.i18nAria);});
+    document.querySelectorAll('[data-i18n-alt]').forEach(function(el){el.alt=T[l][el.dataset.i18nAlt] || '';});
+    document.dispatchEvent(new CustomEvent('lv:language', {detail:l}));
     buildLists(); buildMarquee();
     try { localStorage.setItem('lv_lang', l); } catch (e) {}
   }
@@ -230,81 +233,15 @@
     }
   }
 
-  /* ---------- модалки ---------- */
-  var filmModal = $('#filmModal'), filmVideo = $('#filmVideo'), mapModal = $('#mapModal');
-  function openFilm() {
-    if (!filmVideo.getAttribute('src')) filmVideo.src = 'assets/video/film.mp4';
-    filmModal.hidden = false; document.body.style.overflow = 'hidden';
-    filmVideo.currentTime = 0; filmVideo.play().catch(function () {});
-  }
-  function closeAll() {
-    filmModal.hidden = true; mapModal.hidden = true; document.body.style.overflow = '';
-    filmVideo.pause();
-  }
-  $$('[data-film]').forEach(function (b) { b.addEventListener('click', openFilm); });
-  $$('[data-close]').forEach(function (b) { b.addEventListener('click', closeAll); });
-  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeAll(); });
-  filmModal.addEventListener('click', function (e) { if (e.target === filmModal) closeAll(); });
-
-  /* карта: зум и перетаскивание */
-  var mv = $('#mapView'), mi = $('#mapBig'), st = { s: 1, x: 0, y: 0, min: 1 };
-  function applyT() { mi.style.transform = 'translate(' + st.x + 'px,' + st.y + 'px) scale(' + st.s + ')'; }
-  function fitMap() {
-    var vw = mv.clientWidth, vh = mv.clientHeight, nw = mi.naturalWidth || 3600, nh = mi.naturalHeight || 2812;
-    mi.style.width = nw + 'px'; mi.style.height = nh + 'px';
-    st.s = Math.min(vw / nw, vh / nh); st.min = st.s * .9;
-    st.x = (vw - nw * st.s) / 2; st.y = (vh - nh * st.s) / 2; applyT();
-  }
-  function zoomAt(cx, cy, f) {
-    var ns = Math.max(st.min, Math.min(1.4, st.s * f)); f = ns / st.s;
-    st.x = cx - (cx - st.x) * f; st.y = cy - (cy - st.y) * f; st.s = ns; applyT();
-  }
-  $('#mapBtn').addEventListener('click', function () {
-    mapModal.hidden = false; document.body.style.overflow = 'hidden';
-    if (mi.complete) fitMap(); else mi.onload = fitMap;
-  });
-  mv.addEventListener('wheel', function (e) { e.preventDefault(); zoomAt(e.clientX, e.clientY, e.deltaY < 0 ? 1.18 : 1 / 1.18); }, { passive: false });
-  var ptrs = {}, last = null, pd = 0;
-  mv.addEventListener('pointerdown', function (e) { mv.setPointerCapture(e.pointerId); ptrs[e.pointerId] = e; last = { x: e.clientX, y: e.clientY }; });
-  mv.addEventListener('pointermove', function (e) {
-    if (!ptrs[e.pointerId]) return; ptrs[e.pointerId] = e;
-    var ids = Object.keys(ptrs);
-    if (ids.length === 2) {
-      var a = ptrs[ids[0]], b = ptrs[ids[1]], d = Math.hypot(a.clientX - b.clientX, a.clientY - b.clientY);
-      if (pd) zoomAt((a.clientX + b.clientX) / 2, (a.clientY + b.clientY) / 2, d / pd);
-      pd = d;
-    } else if (last) { st.x += e.clientX - last.x; st.y += e.clientY - last.y; last = { x: e.clientX, y: e.clientY }; applyT(); }
-  });
-  function up(e) { delete ptrs[e.pointerId]; pd = 0; last = Object.keys(ptrs).length ? { x: e.clientX, y: e.clientY } : null; }
-  mv.addEventListener('pointerup', up); mv.addEventListener('pointercancel', up);
-  mv.addEventListener('dblclick', function (e) { zoomAt(e.clientX, e.clientY, 1.8); });
-  window.addEventListener('resize', function () { if (!mapModal.hidden) fitMap(); });
-
-  /* ---------- форма ---------- */
-  $('#invForm').addEventListener('submit', function (e) {
-    e.preventDefault();
-    var f = e.target, name = f.name.value.trim(), contact = f.contact.value.trim(), msg = f.msg.value.trim();
-    [f.name, f.contact].forEach(function (i) { i.classList.toggle('err', !i.value.trim()); });
-    if (!name || !contact) return;
-    var text = 'Lake Village — заявка с сайта\nИмя: ' + name + '\nКонтакт: ' + contact + (msg ? '\nСообщение: ' + msg : '');
-    var ok = function () { $('#formOk').hidden = false; f.reset(); };
-    if (FORM_ENDPOINT) {
-      fetch(FORM_ENDPOINT, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ name: name, contact: contact, message: msg, lang: lang }) })
-        .then(ok).catch(function () { window.open('https://wa.me/' + FORM_WA + '?text=' + encodeURIComponent(text), '_blank'); });
-    } else {
-      window.open('https://wa.me/' + FORM_WA + '?text=' + encodeURIComponent(text), '_blank'); ok();
-    }
-  });
-
   /* ---------- меню ---------- */
   var burger = $('#burger'), nav = $('#nav');
-  burger.addEventListener('click', function () { burger.classList.toggle('on'); nav.classList.toggle('open'); });
-  $$('#nav a').forEach(function (a) { a.addEventListener('click', function () { burger.classList.remove('on'); nav.classList.remove('open'); }); });
+  burger.addEventListener('click', function () { burger.classList.toggle('on'); nav.classList.toggle('open'); burger.setAttribute('aria-expanded',nav.classList.contains('open')); });
+  $$('#nav a').forEach(function (a) { a.addEventListener('click', function () { burger.classList.remove('on'); nav.classList.remove('open'); burger.setAttribute('aria-expanded','false'); }); });
   $$('.lang button').forEach(function (b) { b.addEventListener('click', function () { applyLang(b.dataset.lang); }); });
 
   /* ---------- init ---------- */
   var track = $('#galTrack');
-  GAL.concat(GAL).forEach(function (n) {
+  if (track) GAL.concat(GAL).forEach(function (n) {
     var im = document.createElement('img'); im.src = 'assets/img/' + n + '.webp'; im.alt = ''; im.loading = 'lazy'; im.decoding = 'async'; track.appendChild(im);
   });
   $('#year').textContent = COPYRIGHT_YEAR;
@@ -316,7 +253,7 @@
   window.addEventListener('scroll', onScroll, { passive: true });
   window.addEventListener('resize', onScroll);
   window.addEventListener('load', function () { collectPar(); onScroll(); });
-  requestAnimationFrame(function () { document.body.classList.add('loaded'); $('#heroScript').classList.add('is-in'); onScroll(); });
+  requestAnimationFrame(function () { document.body.classList.add('loaded'); if ($('#heroScript')) $('#heroScript').classList.add('is-in'); onScroll(); });
   var hv = $('#heroVideo');
   if (hv) {
     var saveData = navigator.connection && navigator.connection.saveData;
@@ -331,3 +268,4 @@
     }
   }
 })();
+
