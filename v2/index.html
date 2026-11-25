@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Lake Village Belarus</title>
+<meta name="description" content="Lake Village Belarus — проект загородного комплекса на стадии развития: дома A-Frame и Barnhouse с купелями, ресторан, стеклянная оранжерея, пирс и пляж.">
+<meta name="theme-color" content="#5d5e45">
+<meta property="og:title" content="Lake Village Belarus">
+<meta property="og:description" content="Загородный комплекс у озера. Природа. Люди. События.">
+<meta property="og:image" content="assets/img/aerial-logo.webp">
+<link rel="icon" href="assets/img/leaf.png">
+<link rel="preload" href="assets/fonts/cinzel-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="css/fonts.css?v=4">
+<link rel="stylesheet" href="css/style.css?v=4">
+<link rel="stylesheet" href="css/palette.css?v=4">
+<link rel="stylesheet" href="css/v2.css?v=4">
+<link rel="stylesheet" href="css/revisions.css?v=5">
+</head>
+<body class="v2">
+<div class="progress" aria-hidden="true"><i></i></div>
+
+<!-- ============ HEADER ============ -->
+<header class="hdr" id="hdr">
+  <a class="logo" href="#top" aria-label="Lake Village Belarus">
+    <img src="assets/img/leaf.png" alt="" class="logo__leaf" width="239" height="299">
+    <span class="logo__txt"><b>LAKE VILLAGE</b><small>BELARUS</small></span>
+  </a>
+  <nav class="nav" id="nav">
+    <a href="#about" data-i18n="nav_about">О комплексе</a>
+    <a href="#infra" data-i18n="nav_infra">Инфраструктура</a>
+    <a href="#plan" data-i18n="nav_plan">Генплан</a>
+    <a href="#events" data-i18n="nav_events">События</a>
+    <a href="about.html" data-i18n="nav_team">О нас</a>
+    <a href="#investors" class="nav__cta" data-i18n="nav_inv">Инвесторам</a>
+  </nav>
+  <div class="hdr__r">
+    <div class="lang" role="group" aria-label="Language">
+      <button data-lang="ru" class="on">RU</button><span>/</span><button data-lang="en">EN</button>
+    </div>
+    <button class="burger" id="burger" aria-label="Menu" aria-expanded="false" aria-controls="nav"><i></i><i></i></button>
+  </div>
+</header>
+
+<main id="top">
+
+<!-- ============ HERO: sticky video + scrolling text ============ -->
+<section class="split" id="hero">
+  <div class="split__text">
+    <article class="panel panel--first">
+      <p class="eyebrow" data-i18n="h_eyebrow">Lake Village · Belarus</p>
+      <h1 class="h1">
+        <span class="line"><span data-i18n="h_t1">Загородный комплекс,</span></span>
+        <span class="line"><span class="script" id="heroScript"><span data-i18n="h_t2">создающийся сейчас</span>
+          <svg class="uline" viewBox="0 0 400 18" preserveAspectRatio="none" aria-hidden="true"><path d="M3 11 C 70 3, 130 16, 200 8 S 340 4, 397 10"/></svg></span></span>
+      </h1>
+      <p class="project-status" data-i18n="project_status">Проект на стадии развития</p>
+      <p class="lead" data-i18n="h_lead">Озеро, лес и дома с купелями. Место, куда приезжают отдыхать и проводить самые важные события жизни.</p>
+      <div class="btns">
+        <button class="btn btn--gold" data-film><svg viewBox="0 0 24 24" width="16" height="16"><path d="M7 4.5v15l13-7.5z" fill="currentColor"/></svg><span data-i18n="h_film">Смотреть фильм</span></button>
+        <a class="btn btn--ghost" href="#investors" data-i18n="nav_inv">Инвесторам</a>
+      </div>
+      <div class="scroll-hint" aria-hidden="true"><i></i><span data-i18n="h_scroll">листайте</span></div>
+    </article>
+
+    <article class="panel">
+      <h2 class="h2" data-i18n="p1_t">Главная идея</h2>
+      <p class="big" data-i18n="p1_p">Создать место, куда люди приезжают не только отдыхать, но и проводить самые важные события в своей жизни.</p>
+    </article>
+    <article class="panel">
+      <h2 class="h2" data-i18n="p2_t">Формат</h2>
+      <p class="big"><em>Luxury Nature Resort &amp; Event Destination.</em></p>
+      <p class="muted" data-i18n="p2_p">Всесезонный комплекс для событийного, корпоративного, свадебного и гастрономического туризма.</p>
+    </article>
+    <article class="panel">
+      <h2 class="h2" data-i18n="p3_t">Миссия</h2>
+      <p class="big" data-i18n="p3_p">Создать идеальное пространство для отдыха и праздников с круглогодичным комфортом и сильным гастрономическим акцентом.</p>
+      <p class="script script--sm" data-i18n="slogan">Природа. Люди. События.</p>
+    </article>
+  </div>
+
+  <div class="split__media">
+    <div class="v2bg" aria-hidden="true"></div>
+    <div class="vframe">
+      <div class="vwrap">
+        <video id="heroVideo" autoplay muted loop playsinline preload="metadata" poster="assets/video/hero-poster.jpg">
+          <source src="assets/video/hero.webm" type="video/webm">
+          <source src="assets/video/hero.mp4" type="video/mp4">
+        </video>
+        <i class="corner c1"></i><i class="corner c2"></i><i class="corner c3"></i><i class="corner c4"></i>
+      </div>
+    </div>
+    <div class="glow" aria-hidden="true"></div>
+  </div>
+</section>
+
+<!-- ============ MARQUEE ============ -->
+<div class="mq" aria-label="Проект в стадии разработки"><div class="mq__track" id="mqTrack"></div></div>
+
+<!-- ============ NUMBERS ============ -->
+<section class="nums light" id="about">
+  <div class="wrap nums__grid">
+    <div class="stat reveal"><b><span data-count="5">0</span><sup>+</sup></b><span data-i18n="n1">гектаров территории у озера</span></div>
+    <div class="stat reveal" style="--d:.1s"><b data-count="14">0</b><span data-i18n="n2">домов A-Frame и Barnhouse</span></div>
+    <div class="stat reveal" style="--d:.2s"><b data-count="350">0</b><span data-i18n="n3">гостей в банкетном холле</span></div>
+    <div class="stat reveal" style="--d:.3s"><b data-count="100">0</b><span data-i18n="n4">гостей в стеклянной оранжерее</span></div>
+  </div>
+  <div class="wrap about reveal">
+    <p class="eyebrow" data-i18n="a_eyebrow">О комплексе</p>
+    <p class="about__p" data-i18n="a_p">Современный загородный комплекс на участке от 5 гектаров в экологически чистом районе Беларуси: собственное озеро, премиальные домики и крупнейшая в регионе стеклянная оранжерея для банкетов и мероприятий. Инфраструктура для комфорта — без ощущения бетонного города.</p>
+  </div>
+</section>
+
+<!-- ============ INFRASTRUCTURE ============ -->
+<section class="infra light" id="infra">
+  <div class="wrap">
+    <header class="shead reveal">
+      <h2 class="h2 h2--xl" data-i18n="i_title">Инфраструктура</h2>
+      <p class="muted" data-i18n="i_sub">Всё, что нужно для отдыха и праздника — рядом с водой и лесом.</p>
+    </header>
+
+    <article class="row">
+      <div class="row__media reveal">
+        <figure class="fr tall"><img data-parallax src="assets/img/v-restaurant.webp" alt="" loading="lazy" decoding="async"></figure>
+      </div>
+      <div class="row__txt reveal">
+        <span class="tag" data-i18n="r1_tag">Ресторан</span>
+        <h3 class="h3" data-i18n="r1_t">Ресторанно-банкетный холл</h3>
+        <p data-i18n="r1_p">Большой банкетный комплекс на 350 гостей с панорамным остеклением, авторской кухней и летней террасой над водой.</p>
+        <ul class="chips"><li data-i18n="r1_c1">до 350 гостей</li><li data-i18n="r1_c2">авторская кухня</li><li data-i18n="r1_c3">летняя терраса</li></ul>
+      </div>
+    </article>
+
+    <article class="row rev">
+      <div class="row__media reveal">
+        <figure class="fr wide"><img data-parallax src="assets/img/orangery.webp" alt="" loading="lazy" decoding="async"></figure>
+      </div>
+      <div class="row__txt reveal">
+        <span class="tag" data-i18n="r2_tag">Банкеты</span>
+        <h3 class="h3" data-i18n="r2_t">Стеклянная оранжерея</h3>
+        <p data-i18n="r2_p">Светлое пространство под стеклянной крышей для свадеб и камерных банкетов на 100 гостей. Вечером оранжерея превращается в сияющий фонарь на берегу.</p>
+        <ul class="chips"><li data-i18n="r2_c1">до 100 гостей</li><li data-i18n="r2_c2">свадьбы и банкеты</li></ul>
+      </div>
+    </article>
+
+    <article class="row">
+      <div class="row__media reveal">
+        <figure class="fr wide"><img data-parallax src="assets/img/aframe-fisher.webp" alt="" loading="lazy" decoding="async"></figure>
+      </div>
+      <div class="row__txt reveal">
+        <span class="tag" data-i18n="r3_tag">Проживание</span>
+        <h3 class="h3" data-i18n="r3_t">Дома A-Frame</h3>
+        <p data-i18n="r3_p">Дома-треугольники с панорамным остеклением, террасой и купелью на дровах, с видом на озеро.</p>
+        <ul class="chips"><li data-i18n="home_glass">Панорамное остекление</li><li data-i18n="home_tub">Купель на дровах</li><li data-i18n="home_terrace">Терраса</li></ul>
+      </div>
+    </article>
+
+    <article class="row rev">
+      <div class="row__media reveal duo">
+        <figure class="fr tall"><img data-parallax src="assets/img/v-barn-tub.webp" alt="" loading="lazy" decoding="async"></figure>
+        <figure class="fr tall lower"><img data-parallax src="assets/img/v-barn-aerial.webp" alt="" loading="lazy" decoding="async"></figure>
+      </div>
+      <div class="row__txt reveal">
+        <span class="tag" data-i18n="r4_tag">Проживание</span>
+        <h3 class="h3" data-i18n="r4_t">Дома Barnhouse</h3>
+        <p data-i18n="r4_p">Тёмный металл, тёплое дерево и стеклянный фасад. В каждом доме есть спальня, гостиная, кухня, терраса, сауна, купель на дровах и зона BBQ.</p>
+        <ul class="chips"><li data-i18n="home_glass">Панорамное остекление</li><li data-i18n="home_tub">Купель на дровах</li><li data-i18n="home_terrace">Терраса</li></ul>
+      </div>
+    </article>
+
+    <p class="note concept-note" data-i18n="concept_note">Изображения комплекса — концептуальные визуализации.</p>
+    <div class="more">
+      <h3 class="h3 reveal" data-i18n="m_title">И ещё на территории</h3>
+      <div class="more__grid">
+        <figure class="card reveal"><img src="assets/img/pier-sunset.webp" alt="" loading="lazy"><figcaption><b data-i18n="m1">Пирс и пляж</b><span data-i18n="m1s">прогулочная набережная</span></figcaption></figure>
+        <figure class="card reveal" style="--d:.08s"><img src="assets/img/v-playground.webp" alt="" loading="lazy"><figcaption><b data-i18n="m2">Детская площадка</b><span data-i18n="m2s">для всей семьи</span></figcaption></figure>
+        <figure class="card reveal" style="--d:.16s"><img src="assets/img/v-aerial-heli.webp" alt="" loading="lazy"><figcaption><b data-i18n="m3">Костровая зона и салюты</b><span data-i18n="m3s">вертолётная площадка*</span></figcaption></figure>
+        <figure class="card reveal" style="--d:.24s"><img src="assets/img/v-reception.webp" alt="" loading="lazy"><figcaption><b data-i18n="m4">Въездная группа и ресепшен</b><span data-i18n="m4s">охраняемая территория</span></figcaption></figure>
+      </div>
+      <p class="note reveal" data-i18n="m_note">* При условии подходящего участка и согласованности с государственными органами.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ NOW BEING CREATED ============ -->
+<section class="now" id="now">
+  <div class="now__bg"><img data-parallax src="assets/img/v-construction.webp" alt="" loading="lazy"></div>
+  <div class="wrap now__in">
+    <h2 class="h2 h2--xl reveal"><span data-i18n="now_t1">Комплекс</span> <span class="script" data-i18n="now_t2">создаётся сейчас</span></h2>
+    <p class="big reveal" data-i18n="now_p">Работа над территорией уже идёт. Проект реализуется поэтапно: от главных зон для событий к проживанию и сервисам.</p>
+    <ol class="steps">
+      <li class="reveal"><b>I</b><span data-i18n="s1">Банкетный холл, оранжерея, благоустройство озера</span></li>
+      <li class="reveal" style="--d:.1s"><b>II</b><span data-i18n="s2">Коттеджи, глэмпинг, MICE-инфраструктура</span></li>
+      <li class="reveal" style="--d:.2s"><b>III</b><span data-i18n="s3">Сервисы и форматы отдыха для круглогодичной загрузки</span></li>
+    </ol>
+  </div>
+</section>
+
+<!-- ============ MASTER PLAN ============ -->
+<section class="plan light" id="plan">
+  <div class="wrap">
+    <header class="shead reveal">
+      <h2 class="h2 h2--xl" data-i18n="pl_title">Генеральный план</h2>
+      <p class="muted" data-i18n="pl_sub">Закрытая охраняемая территория. Нажмите на карту, чтобы рассмотреть её подробнее.</p>
+    </header>
+    <div id="masterplan"></div>
+  </div>
+</section>
+
+<!-- ============ EVENTS ============ -->
+<section class="events" id="events">
+  <div class="wrap">
+    <header class="shead reveal">
+      <h2 class="h2 h2--xl" data-i18n="e_title">События круглый год</h2>
+      <p class="muted" data-i18n="e_sub">Девять форматов, для которых создано это место.</p>
+    </header>
+    <div class="egrid" id="egrid"></div><p class="note" data-i18n="events_note">Иллюстрации будущих форматов событий. Комплекс находится на стадии развития.</p>
+  </div>
+</section>
+
+<!-- ============ GALLERY MARQUEE ============ -->
+<section class="gal light" aria-label="Gallery">
+  <div class="gal__track" id="galTrack"></div>
+</section>
+
+<!-- ============ ABOUT / TEAM + 3D ============ -->
+<section class="team" id="team"><div class="wrap team-editorial"><p class="eyebrow" data-i18n="t_eyebrow">О нас</p><h2 class="h2 h2--xl reveal" data-i18n="t_title">За большими проектами стоят сильные команды</h2><div class="team-copy reveal"><p class="big" data-i18n="t_p">LAKE VILLAGE BELARUS создаёт команда, которая превращает амбициозные идеи в реальные результаты.</p><p data-i18n="t_v">Наша экспертиза охватывает международные фестивали, телевизионные шоу, концерты ведущих артистов и сотрудничество с крупнейшими брендами индустрии развлечений.</p><p data-i18n="t_final">Сегодня мы объединяем профессиональный опыт, сильные связи и высокие стандарты организации, создавая новый уровень премиального отдыха и событийного туризма в Беларуси.</p></div><div class="team-stats reveal"><div><b>20+</b><span data-i18n="years_exp">лет опыта</span></div><div><b>800+</b><span data-i18n="projects_count">проектов</span></div><div><b>360°</b><span data-i18n="turnkey">организация под ключ</span></div></div><div class="btns reveal"><a class="btn btn--gold" href="about.html" data-i18n="team_more">Подробнее о нас →</a><button class="btn btn--ghost" data-coming data-i18n="tour_t">3D-тур по комплексу</button></div></div></section>
+
+<!-- ============ INVESTORS ============ -->
+<section class="inv" id="investors">
+  <div class="inv__bg"><img data-parallax src="assets/img/pier-evening.webp" alt="" loading="lazy"></div>
+  <div class="wrap inv__in">
+    <header class="shead reveal">
+      <h2 class="h2 h2--xl" data-i18n="iv_title">Инвесторам</h2>
+      <p class="big" data-i18n="iv_sub">Расскажем о проекте лично: условия, этапы и модель работы обсуждаем на встрече. Позвоните или оставьте контакт, и мы свяжемся.</p>
+    <p class="big" data-i18n="iv_model">Финансовую модель и условия партнёрства представим лично.</p><a href="#invForm" class="btn btn--gold investment-cta" data-i18n="iv_cta">Обсудить инвестиции →</a>
+    </header>
+    <div class="inv__grid">
+      <div class="people">
+        <article class="person reveal">
+          <div class="person__n"><b data-i18n="pr_alex">Александр Сербун</b><span data-i18n="pr_a">Автор и руководитель проекта</span></div>
+          <a class="person__tel" href="tel:+375295773223">+375 29 577 32 23</a>
+          <a class="person__ig" href="https://instagram.com/serbunby" target="_blank" rel="noopener"><span class="instagram-icon" aria-hidden="true">◎</span> Instagram @serbunby</a>
+        </article>
+        <article class="person reveal" style="--d:.1s">
+          <div class="person__n"><b data-i18n="pr_s">Сергей</b><span data-i18n="pr_c">Контакты проекта</span></div>
+          <a class="person__tel" href="tel:+375296427440">+375 29 642 74 40</a><a class="person__ig" href="https://www.instagram.com/serbuns/" target="_blank" rel="noopener"><span class="instagram-icon" aria-hidden="true">◎</span> Instagram @serbuns</a>
+        </article>
+        <article class="person reveal" style="--d:.2s">
+          <div class="person__n"><b data-i18n="pr_d">Дмитрий</b><span data-i18n="pr_c2">Контакты проекта</span></div>
+          <a class="person__tel" href="tel:+375295592610">+375 29 559 26 10</a>
+        </article>
+      </div>
+      <form class="form reveal" id="invForm">
+        <h3 class="h3" data-i18n="f_title">Оставьте контакт</h3>
+        <label><span data-i18n="f_name">Имя</span><input name="name" type="text" autocomplete="name" maxlength="120" required></label>
+        <label><span data-i18n="f_contact">Телефон или Telegram</span><input name="contact" type="text" autocomplete="tel" maxlength="160" required></label>
+        <label><span data-i18n="f_msg">Сообщение (необязательно)</span><textarea name="msg" rows="3" maxlength="2000"></textarea></label>
+        <button class="btn btn--gold" type="submit"><span data-i18n="f_send">Отправить</span></button>
+        <p class="note" data-i18n="f_notice">Заявка откроется в Telegram. Нажмите «Отправить» в чате с Александром.</p><p class="form__ok" id="formOk" role="status" aria-live="polite" hidden data-i18n="f_ok">Спасибо! Мы свяжемся с вами.</p>
+      <div class="form-fallback" id="formFallback" hidden><a id="telegramDraft" target="_blank" rel="noopener" data-i18n="f_reopen">Открыть Telegram ещё раз →</a><button type="button" id="copyRequest" data-i18n="f_copy">Скопировать заявку</button><a href="tel:+375295773223">+375 29 577 32 23</a></div></form>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="ftr">
+  <div class="wrap ftr__in">
+    <div class="logo logo--lg">
+      <img src="assets/img/leaf.png" alt="" class="logo__leaf" width="239" height="299">
+      <span class="logo__txt"><b>LAKE VILLAGE</b><small>BELARUS</small></span>
+    </div>
+    <p class="script script--sm" data-i18n="slogan">Природа. Люди. События.</p>
+    <a class="ig" href="https://www.instagram.com/lakevillageblr/" target="_blank" rel="noopener">Instagram @lakevillageblr</a>
+  </div>
+  <p class="copy"><span data-i18n="rights">Все права защищены</span> © <span id="year">2026</span></p>
+</footer>
+
+<!-- ============ MODALS ============ -->
+<div class="modal" id="filmModal" role="dialog" aria-modal="true" aria-label="Lake Village — film" hidden>
+  <button class="modal__x" data-close aria-label="Close">×</button>
+  <video id="filmVideo" controls playsinline preload="none" poster="assets/video/film-poster.jpg"></video>
+</div>
+<script src="js/copy.js?v=5"></script><script src="js/main.js?v=5"></script><script src="js/interface.js?v=5"></script><script src="js/masterplan.js?v=5"></script>
+</body>
+</html>
+

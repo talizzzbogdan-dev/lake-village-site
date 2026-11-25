@@ -1,0 +1,74 @@
+/* Светлая оливково-песочная палитра (по мотивам Eden Hill) */
+:root{
+  --bg:#5d5e45; --bg2:#66674d; --bg3:#575840;
+  --cream:#f6f0e3; --cream2:#e6dfcb; --muted:#d8d1ba;
+  --gold:#d9b46c; --gold2:#ecd096; --amber:#e39a4a;
+  --line:rgba(236,208,150,.34);
+  --ink:#2b2d20; --ink2:#4e503c; --gold-d:#8f6d2c;
+  --sand:#f2ecdf; --sand2:#e8e0cd;
+}
+body{background:var(--bg);color:var(--cream)}
+.hdr.scrolled{background:rgba(84,85,62,.84);box-shadow:0 1px 0 rgba(236,208,150,.25)}
+
+/* hero */
+.split{background:
+  radial-gradient(1100px 700px at 86% 6%,rgba(240,182,100,.26),transparent 60%),
+  radial-gradient(900px 600px at 0% 100%,rgba(0,0,0,.10),transparent 60%),
+  linear-gradient(165deg,#6b6c51,#5a5b42)}
+.glow{background:radial-gradient(520px 520px at 50% 45%,rgba(240,182,100,.2),transparent 70%)}
+.vwrap video{box-shadow:0 40px 110px rgba(30,30,16,.5),0 0 0 1px rgba(236,208,150,.35)}
+.lead{color:var(--cream2)}
+.script{color:var(--gold2)}
+.uline path{stroke:var(--amber)}
+
+/* marquee */
+.mq{background:#474832}
+
+/* светлые секции */
+.light{background:var(--sand);color:var(--ink)}
+.light .muted,.light .shead .muted{color:#6c6a55}
+.light .big,.light .about__p,.light .h2,.light .h3{color:var(--ink)}
+.light .big em{color:var(--gold-d)}
+.light .eyebrow,.light .idx,.light .tag,.light .num{color:var(--gold-d)}
+.light .eyebrow::before{background:var(--gold-d)}
+.light .idx::after,.light .num::after{background:rgba(143,109,44,.4)}
+.nums.light{background:linear-gradient(var(--sand2),var(--sand) 60%)}
+.light .nums__grid{border-color:rgba(60,60,40,.24)}
+.light .stat{border-color:rgba(60,60,40,.2)}
+.light .stat b{color:#85632a}
+.light .stat>span{color:var(--ink2)}
+.infra.light{background:var(--sand)}
+.light .row__txt p{color:var(--ink2)}
+.light .chips li{border-color:rgba(60,60,40,.3);color:var(--ink2)}
+.light .chips li:hover{border-color:var(--gold-d);color:var(--gold-d);background:rgba(143,109,44,.08)}
+.light .fr{box-shadow:0 26px 60px rgba(70,62,30,.3)}
+.light .fr::after{box-shadow:inset 0 0 0 1px rgba(143,109,44,.3)}
+.light .note{color:#7a785f}
+.light .card figcaption span{color:var(--gold2)}
+.plan.light{background:var(--sand2)}
+.light .map{box-shadow:0 30px 80px rgba(70,62,30,.4),0 0 0 1px rgba(143,109,44,.4)}
+.light .obj span{color:var(--ink)}
+.light .obj b{border-color:var(--gold-d);color:var(--gold-d)}
+.light .obj:hover{background:rgba(143,109,44,.09);border-color:rgba(143,109,44,.3)}
+.light .obj img{box-shadow:0 0 0 1px rgba(143,109,44,.35)}
+.light .routes li{color:var(--ink2);border-color:rgba(60,60,40,.16)}
+.gal.light{background:var(--sand2)}
+.gal__track img{box-shadow:0 10px 30px rgba(70,62,30,.25)}
+
+/* оливковые секции */
+.events{background:var(--bg2)}
+.ev:hover::before{opacity:1}
+.team{background:var(--bg3)}
+.now__bg::after{background:linear-gradient(90deg,rgba(56,58,38,.93) 0%,rgba(56,58,38,.78) 48%,rgba(56,58,38,.28) 100%)}
+.inv__bg::after{background:linear-gradient(180deg,rgba(58,60,40,.92),rgba(58,60,40,.8) 50%,rgba(52,54,36,.94))}
+.person,.form{background:rgba(66,68,46,.62)}
+.ftr{background:#3d3e2c}
+.btn--gold{color:#2a2b1c}
+.nav__cta{color:#2a2b1c!important}
+
+@media (max-width:860px){
+  .split__text::before{background:linear-gradient(180deg,rgba(50,52,34,.30),rgba(50,52,34,.12))}
+  .panel:not(.panel--first)::before{background:linear-gradient(transparent,rgba(56,58,38,.93) 55%)}
+  .panel--first::before{background:linear-gradient(transparent,rgba(56,58,38,.9) 50%)}
+  .now__bg::after{background:linear-gradient(180deg,rgba(56,58,38,.9),rgba(56,58,38,.82))}
+}

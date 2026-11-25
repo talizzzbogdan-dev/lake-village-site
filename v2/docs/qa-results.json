@@ -1,0 +1,101 @@
+{
+  "results": [
+    {
+      "width": 1920,
+      "page": "index.html",
+      "overflow": false,
+      "brokenImages": []
+    },
+    {
+      "width": 1920,
+      "page": "about.html",
+      "overflow": false,
+      "brokenImages": []
+    },
+    {
+      "width": 1440,
+      "page": "index.html",
+      "overflow": false,
+      "brokenImages": []
+    },
+    {
+      "width": 1440,
+      "page": "about.html",
+      "overflow": false,
+      "brokenImages": []
+    },
+    {
+      "width": 1280,
+      "page": "index.html",
+      "overflow": false,
+      "brokenImages": []
+    },
+    {
+      "width": 1280,
+      "page": "about.html",
+      "overflow": false,
+      "brokenImages": []
+    },
+    {
+      "width": 1024,
+      "page": "index.html",
+      "overflow": false,
+      "brokenImages": []
+    },
+    {
+      "width": 1024,
+      "page": "about.html",
+      "overflow": false,
+      "brokenImages": []
+    },
+    {
+      "width": 768,
+      "page": "index.html",
+      "overflow": false,
+      "brokenImages": []
+    },
+    {
+      "width": 768,
+      "page": "about.html",
+      "overflow": false,
+      "brokenImages": []
+    },
+    {
+      "width": 390,
+      "page": "index.html",
+      "overflow": false,
+      "brokenImages": []
+    },
+    {
+      "width": 390,
+      "page": "about.html",
+      "overflow": false,
+      "brokenImages": []
+    },
+    {
+      "width": 360,
+      "page": "index.html",
+      "overflow": false,
+      "brokenImages": []
+    },
+    {
+      "width": 360,
+      "page": "about.html",
+      "overflow": false,
+      "brokenImages": []
+    }
+  ],
+  "errors": [],
+  "missing": [
+    "http://127.0.0.1:4173/lake-village-site/assets/video/hero.webm",
+    "http://127.0.0.1:4173/lake-village-site/assets/video/hero.mp4"
+  ],
+  "checked": [
+    "coming modal/session/focus",
+    "map select/routes/zoom/fullscreen",
+    "RU/EN across pages",
+    "Telegram draft without sending",
+    "mobile menu",
+    "touch marker"
+  ]
+}
