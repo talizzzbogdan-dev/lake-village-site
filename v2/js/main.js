@@ -22,8 +22,8 @@
       i_title:'Инфраструктура', i_sub:'Всё, что нужно для отдыха и праздника — рядом с водой и лесом.',
       r1_tag:'Ресторан', r1_t:'Ресторанно-банкетный холл', r1_p:'Большой банкетный комплекс на 350 гостей с панорамным остеклением, авторской кухней и летней террасой над водой.',
       r1_c1:'до 350 гостей', r1_c2:'авторская кухня', r1_c3:'летняя терраса',
-      r2_tag:'Банкеты', r2_t:'Стеклянная оранжерея', r2_p:'Светлое пространство под стеклянной крышей для свадеб и камерных банкетов на 100 гостей. Вечером оранжерея превращается в сияющий фонарь на берегу.',
-      r2_c1:'до 100 гостей', r2_c2:'свадьбы и банкеты',
+      r2_tag:'Банкеты', r2_t:'Стеклянная оранжерея', r2_p:'Светлое пространство под стеклянной крышей для свадеб и камерных банкетов на 120 гостей. Вечером оранжерея превращается в сияющий фонарь на берегу.',
+      r2_c1:'до 120 гостей', r2_c2:'свадьбы и банкеты',
       r3_tag:'Проживание', r3_t:'Дома A-Frame', r3_p:'Дома-треугольники с панорамным остеклением, террасой и купелью на дровах, с видом на озеро.',
       r3_c1:'панорамные окна', r3_c2:'купель на дровах', r3_c3:'терраса',
       r4_tag:'Проживание', r4_t:'Дома Barnhouse', r4_p:'Тёмный металл, тёплое дерево и стеклянный фасад. В каждом доме есть спальня, гостиная, кухня, терраса, сауна, купель на дровах и зона BBQ.',
@@ -68,8 +68,8 @@
       i_title:'Infrastructure', i_sub:'Everything for rest and celebration, right by the water and the forest.',
       r1_tag:'Restaurant', r1_t:'Restaurant & banquet hall', r1_p:'A large banquet complex for 350 guests with panoramic glazing, signature cuisine and a summer terrace above the water.',
       r1_c1:'up to 350 guests', r1_c2:'signature cuisine', r1_c3:'summer terrace',
-      r2_tag:'Banquets', r2_t:'Glass orangery', r2_p:'A bright space under a glass roof for weddings and intimate banquets for 100 guests. In the evening the orangery glows like a lantern on the shore.',
-      r2_c1:'up to 100 guests', r2_c2:'weddings & banquets',
+      r2_tag:'Banquets', r2_t:'Glass orangery', r2_p:'A bright space under a glass roof for weddings and intimate banquets for 120 guests. In the evening the orangery glows like a lantern on the shore.',
+      r2_c1:'up to 120 guests', r2_c2:'weddings & banquets',
       r3_tag:'Stay', r3_t:'A-Frame houses', r3_p:'Triangular houses with panoramic glazing, a terrace and a wood-fired hot tub, overlooking the lake.',
       r3_c1:'panoramic windows', r3_c2:'wood-fired hot tub', r3_c3:'terrace',
       r4_tag:'Stay', r4_t:'Barnhouse houses', r4_p:'Dark metal, warm wood and a glass façade. Each house has a bedroom, living room, kitchen, terrace, sauna, wood-fired hot tub and BBQ area.',
@@ -130,7 +130,7 @@
     T[lang].events.forEach(function (e, i) {
       var d = document.createElement('div');
       d.className = 'ev reveal'; d.style.setProperty('--d', (i % 3) * 0.08 + 's');
-      d.innerHTML = '<img class="ev-image" src="assets/img/' + ['orangery','events/corporate','v-restaurant','events/conference','events/presentation','events/forum','pier-evening','events/graduation','events/cultural'][i] + '.webp" alt="" loading="lazy" decoding="async"><h4>' + e[0] + '</h4><p>' + e[1] + '</p>';
+      d.innerHTML = '<img class="ev-image" src="assets/img/' + ['orangery','events/corporate-hq','v-restaurant-enhanced','events/conference-hq','events/presentation-hq','events/forum-hq','pier-evening','events/graduation-hq','events/cultural-hq'][i] + '.webp" alt="" loading="lazy" decoding="async"><h4>' + e[0] + '</h4><p>' + e[1] + '</p>';
       eg.appendChild(d);
       io.observe(d);
       d.addEventListener('pointermove', function (ev) {

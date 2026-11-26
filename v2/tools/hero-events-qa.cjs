@@ -34,7 +34,7 @@ async function run(name,type,launchOptions){
   await p.locator('[data-lang=en]').click();assert.equal(await p.locator('#heroVideoToggle').innerText(),'Pause video');
   await p.evaluate(()=>document.querySelector('#events').scrollIntoView({behavior:'instant'}));await p.waitForTimeout(150);assert(await p.locator('#heroVideo').evaluate(v=>v.paused));
   const cards=await p.locator('.ev').evaluateAll(cards=>cards.map(c=>({title:c.querySelector('h4').textContent,file:c.querySelector('img').getAttribute('src')})));
-  for(const [index,file] of [[1,'corporate'],[3,'conference'],[4,'presentation'],[5,'forum'],[7,'graduation'],[8,'cultural']])assert.equal(cards[index].file,'assets/img/events/'+file+'.webp');
+  for(const [index,file] of [[1,'corporate'],[3,'conference'],[4,'presentation'],[5,'forum'],[7,'graduation'],[8,'cultural']])assert.equal(cards[index].file,'assets/img/events/'+file+'-hq.webp');
   await p.addStyleTag({content:'*{transition-duration:0s!important;animation-duration:0s!important;scroll-behavior:auto!important}'});
   for(const card of await p.locator('.ev').all())await card.scrollIntoViewIfNeeded();
   await p.waitForFunction(()=>Array.from(document.querySelectorAll('.ev-image')).every(i=>i.complete&&i.naturalWidth>0));
