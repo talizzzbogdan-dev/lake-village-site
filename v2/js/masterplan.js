@@ -17,7 +17,7 @@
     en:{objects:'Places in the resort',routes:'Logistics & routes',all:'Show all',none:'Hide routes',zoomIn:'Zoom in',zoomOut:'Zoom out',reset:'Reset',full:'Full screen',close:'Close',map:'Interactive master plan',hint:'Zoom: + / − or pinch. Move: drag or use arrow keys.',note:'Conceptual plan. Not approved engineering documentation.',draft:'Preliminary interactive plan using the existing visualisation. The new base image and route alignment await review.',beach:'B',routeNames:['Car route','Pedestrian route','Service road','Guest access','To the pier','To the beach','To the orangery','To the restaurant','To the helipad']}
   };
   var positions=[[73,79],[82,64],[48,70],[11,80],[35,61],[15,40],[88,40],[49,30],[37,16],[66,15],[50,58]];
-  var images=['v-arrival','v-parking','v-reception','v-aerial-heli','v-playground','aframe-fisher','v-barn-tub','v-pier-aerial','orangery','v-restaurant-enhanced','pier-sunset'];
+  var images=['v-arrival','v-parking','v-reception','v-aerial-heli','v-playground','aframe-fisher','v-barn-tub','v-pier-aerial','orangery','restaurant-client','pier-sunset'];
   // Paths follow the visible lower access road and lakeside paths.
   var walk='M 735 810 L 700 720 Q 660 650 590 620 L 520 610 Q 400 620 290 565 L 225 505 Q 165 475 175 425 L 240 265 Q 260 230 285 220 L 460 220 L 490 215 L 520 175 L 540 140';
   var paths=[
@@ -113,3 +113,4 @@
   window.addEventListener('resize',apply);
   render();
 })();
+

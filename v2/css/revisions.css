@@ -123,3 +123,26 @@ section[id],form[id]{scroll-margin-top:84px}
 .more__grid .card figcaption{gap:9px}
 .more__grid .card figcaption b{font-family:var(--sans);font-size:clamp(18px,1.55vw,24px);font-weight:600;line-height:1.28;letter-spacing:0;color:#fff8eb;text-shadow:0 2px 8px rgba(0,0,0,.7)}
 .more__grid .card figcaption span{color:#f1d597;line-height:1.45;text-shadow:0 1px 5px #000}
+
+
+/* Compact logos, SVG social icons and uncropped infrastructure compositions. */
+.logo__txt small{--logo-line:clamp(10px,1.25vw,18px);grid-template-columns:var(--logo-line) auto var(--logo-line);width:max-content;max-width:100%;align-self:center;gap:8px}
+.logo__txt small::before,.logo__txt small::after{width:100%}
+.social-icon{display:block;width:28px;height:28px;flex:none}
+.social-link{display:inline-flex;align-items:center;justify-content:center;width:44px;min-height:44px;border:1px solid var(--line);border-radius:50%;padding:8px;color:var(--gold2);transition:color .25s,background .25s,border-color .25s}
+.social-link:hover{color:var(--cream);background:rgba(217,180,108,.12);border-color:var(--gold2)}
+.person__ig.social-link{grid-column:1/-1;width:44px;font-size:0}
+.ig.social-link{letter-spacing:0;font-size:0;margin-top:22px}
+.coming-card .btn{gap:12px}
+.coming-card .btn .social-icon{width:25px;height:25px}
+.coming-follow .binocular-icon{width:27px;height:27px}
+.restaurant-figure,.aframe-figure{aspect-ratio:1672/941!important}
+.restaurant-figure img,.aframe-figure img{height:100%;object-fit:contain;object-position:left center;transform:none!important;will-change:auto}
+.phases-title{margin-top:42px}
+.now .steps{margin-top:20px}
+.steps b{display:flex;flex-direction:column;align-items:center;min-width:72px;line-height:1.1}
+.steps b small{font:400 12px/1.4 var(--sans);letter-spacing:.08em;margin-top:7px;color:var(--cream2)}
+.about-priorities{max-width:none;margin-top:48px;grid-template-columns:1fr 1fr;gap:26px}
+.about-prose .priority-callout{font-family:var(--serif);font-size:clamp(24px,2.4vw,36px);line-height:1.38;padding:30px;border:1px solid var(--line);border-left:3px solid var(--gold);background:rgba(217,180,108,.07);color:var(--cream)}
+.priority-callout--final{color:var(--gold2)!important}
+@media(max-width:768px){.about-priorities{grid-template-columns:1fr}.about-prose .priority-callout{padding:24px}.steps li{gap:16px}.steps b{min-width:60px}}

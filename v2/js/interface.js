@@ -7,13 +7,14 @@
   var coming = document.createElement('div');
   coming.className = 'modal coming-modal'; coming.id='comingModal'; coming.hidden=true;
   coming.setAttribute('role','dialog'); coming.setAttribute('aria-modal','true'); coming.setAttribute('aria-labelledby','comingTitle');
-  coming.innerHTML='<div class="coming-card"><button class="modal__x" data-close data-i18n-aria="close">×</button>'+logo+'<h2 id="comingTitle" data-i18n="coming_title"></h2><p data-i18n="coming_text"></p><a class="coming-follow" href="https://www.instagram.com/lakevillageblr/" target="_blank" rel="noopener"><span class="instagram-icon" aria-hidden="true">◎</span><span data-i18n="coming_follow"></span></a><a class="btn btn--gold" href="https://www.instagram.com/lakevillageblr/" target="_blank" rel="noopener" data-i18n="coming_cta"></a></div>';
+  coming.innerHTML='<div class="coming-card"><button class="modal__x" data-close data-i18n-aria="close">×</button>'+logo+'<h2 id="comingTitle" data-i18n="coming_title"></h2><p data-i18n="coming_text"></p><a class="coming-follow" href="https://www.instagram.com/lakevillageblr/" target="_blank" rel="noopener"><svg class="social-icon binocular-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m4.5 10 2-6h3l1.5 7m8.5-1-2-6h-3L13 11M10 12h4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><circle cx="6.5" cy="15.5" r="4.5" stroke="currentColor" stroke-width="1.8"/><circle cx="17.5" cy="15.5" r="4.5" stroke="currentColor" stroke-width="1.8"/></svg><span data-i18n="coming_follow"></span></a><a class="btn btn--gold" href="https://www.instagram.com/lakevillageblr/" target="_blank" rel="noopener"><svg class="social-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="4.2" stroke="currentColor" stroke-width="1.8"/><circle cx="17.5" cy="6.7" r="1" fill="currentColor"/></svg><span data-i18n="coming_cta"></span></a></div>';
   document.body.appendChild(coming);
   var active=null,previousFocus=null,oldOverflow='',background=[];
   function translate(){
     coming.querySelectorAll('[data-i18n]').forEach(function(el){el.textContent=t(el.dataset.i18n);});
     document.querySelectorAll('[data-close]').forEach(function(el){el.setAttribute('aria-label',t('close'));});
     $('#burger').setAttribute('aria-label',t('menu'));
+    document.querySelectorAll('[data-i18n-title]').forEach(function(el){el.title=t(el.dataset.i18nTitle);});
     var film=$('#filmModal');if(film)film.setAttribute('aria-label',t('film_label'));
   }
   function focusables(){return active ? Array.from(active.querySelectorAll('button,a[href],input,textarea,select,[tabindex]:not([tabindex="-1"])')).filter(function(el){return !el.disabled&&!el.hidden&&el.getClientRects().length;}) : [];}
@@ -81,3 +82,4 @@
   document.addEventListener('keydown',function(e){if(e.key==='Escape'&&nav.classList.contains('open')){nav.classList.remove('open');burger.classList.remove('on');burger.setAttribute('aria-expanded','false');syncMenu();burger.focus();}});
   document.addEventListener('lv:language',translate);translate();syncMenu();
 })();
+

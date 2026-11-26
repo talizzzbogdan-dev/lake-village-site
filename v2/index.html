@@ -15,7 +15,7 @@
 <link rel="stylesheet" href="css/style.css?v=4">
 <link rel="stylesheet" href="css/palette.css?v=4">
 <link rel="stylesheet" href="css/v2.css?v=4">
-<link rel="stylesheet" href="css/revisions.css?v=7">
+<link rel="stylesheet" href="css/revisions.css?v=9">
 </head>
 <body class="v2">
 <div class="progress" aria-hidden="true"><i></i></div>
@@ -55,7 +55,7 @@
           <svg class="uline" viewBox="0 0 400 18" preserveAspectRatio="none" aria-hidden="true"><path d="M3 11 C 70 3, 130 16, 200 8 S 340 4, 397 10"/></svg></span></span>
       </h1>
       <p class="project-status" data-i18n="project_status">Проект на стадии развития</p>
-      <p class="lead" data-i18n="h_lead">Озеро, лес и дома с купелями. Место, куда приезжают отдыхать и проводить самые важные события жизни.</p>
+      <p class="lead" data-i18n="h_lead">Озеро, лес и дома с купелями. Ресторан и банкетный холл — для отдыха и самых важных моментов, которые хочется отметить красиво.</p>
       <div class="btns">
         <button class="btn btn--gold" data-film><svg viewBox="0 0 24 24" width="16" height="16"><path d="M7 4.5v15l13-7.5z" fill="currentColor"/></svg><span data-i18n="h_film">Смотреть фильм</span></button>
         <a class="btn btn--ghost" href="#investors" data-i18n="nav_inv">Инвесторам</a>
@@ -124,12 +124,12 @@
 
     <article class="row">
       <div class="row__media reveal">
-        <figure class="fr tall"><img data-parallax src="assets/img/v-restaurant-enhanced.webp" alt="" loading="lazy" decoding="async"></figure>
+        <figure class="fr wide restaurant-figure"><img src="assets/img/restaurant-client.webp" alt="" loading="lazy" decoding="async"></figure>
       </div>
       <div class="row__txt reveal">
         <span class="tag" data-i18n="r1_tag">Ресторан</span>
         <h3 class="h3" data-i18n="r1_t">Ресторанно-банкетный холл</h3>
-        <p data-i18n="r1_p">Большой банкетный комплекс на 350 гостей с панорамным остеклением, авторской кухней и летней террасой над водой.</p>
+        <p data-i18n="r1_p">Большой банкетный комплекс на 350 гостей с панорамным остеклением, авторской кухней и летней террасой у воды.</p>
         <ul class="chips"><li data-i18n="r1_c1">до 350 гостей</li><li data-i18n="r1_c2">авторская кухня</li><li data-i18n="r1_c3">летняя терраса</li></ul>
       </div>
     </article>
@@ -148,7 +148,7 @@
 
     <article class="row">
       <div class="row__media reveal">
-        <figure class="fr wide"><img data-parallax src="assets/img/aframe-fisher.webp" alt="" loading="lazy" decoding="async"></figure>
+        <figure class="fr wide aframe-figure"><img src="assets/img/aframe-fisher.webp" alt="" loading="lazy" decoding="async"></figure>
       </div>
       <div class="row__txt reveal">
         <span class="tag" data-i18n="r3_tag">Проживание</span>
@@ -187,14 +187,15 @@
 
 <!-- ============ NOW BEING CREATED ============ -->
 <section class="now" id="now">
-  <div class="now__bg"><img data-parallax src="assets/img/v-construction.webp" alt="" loading="lazy"></div>
+  <div class="now__bg"><img data-parallax src="assets/img/construction-client.webp" alt="" loading="lazy"></div>
   <div class="wrap now__in">
     <h2 class="h2 h2--xl reveal"><span data-i18n="now_t1">Комплекс</span> <span class="script" data-i18n="now_t2">создаётся сейчас</span></h2>
-    <p class="big reveal" data-i18n="now_p">Работа над территорией уже идёт. Проект реализуется поэтапно: от главных зон для событий к проживанию и сервисам.</p>
+    <p class="big reveal" data-i18n="now_p">Проект находится на стадии разработки и согласования. Мы прорабатываем концепцию, земельный участок и поэтапный план реализации: от главных зон для событий — к проживанию и сервисам.</p>
+    <h3 class="h3 phases-title reveal" data-i18n="phases_title">Этапы реализации:</h3>
     <ol class="steps">
-      <li class="reveal"><b>I</b><span data-i18n="s1">Банкетный холл, оранжерея, благоустройство озера</span></li>
-      <li class="reveal" style="--d:.1s"><b>II</b><span data-i18n="s2">Коттеджи, глэмпинг, MICE-инфраструктура</span></li>
-      <li class="reveal" style="--d:.2s"><b>III</b><span data-i18n="s3">Сервисы и форматы отдыха для круглогодичной загрузки</span></li>
+      <li class="reveal"><b>I<small data-i18n="phase_queue">Очередь</small></b><span data-i18n="s1">Банкетный холл, оранжерея, благоустройство озера</span></li>
+      <li class="reveal" style="--d:.1s"><b>II<small data-i18n="phase_queue">Очередь</small></b><span data-i18n="s2">Коттеджи, глэмпинг, MICE-инфраструктура</span></li>
+      <li class="reveal" style="--d:.2s"><b>III<small data-i18n="phase_queue">Очередь</small></b><span data-i18n="s3">Сервисы и форматы отдыха для круглогодичной загрузки</span></li>
     </ol>
   </div>
 </section>
@@ -243,11 +244,11 @@
         <article class="person reveal">
           <div class="person__n"><b data-i18n="pr_alex">Александр Сербун</b><span data-i18n="pr_a">Автор и руководитель проекта</span></div>
           <a class="person__tel" href="tel:+375295773223">+375 29 577 32 23</a>
-          <a class="person__ig" href="https://instagram.com/serbunby" target="_blank" rel="noopener"><span class="instagram-icon" aria-hidden="true">◎</span> Instagram @serbunby</a>
+          <a class="person__ig social-link" href="https://www.instagram.com/serbunby/" target="_blank" rel="noopener" aria-label="Instagram @serbunby" data-i18n-aria="instagram_alex" data-i18n-title="instagram_alex"><svg class="social-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="4.2" stroke="currentColor" stroke-width="1.8"/><circle cx="17.5" cy="6.7" r="1" fill="currentColor"/></svg></a>
         </article>
         <article class="person reveal" style="--d:.1s">
           <div class="person__n"><b data-i18n="pr_s">Сергей</b><span data-i18n="pr_c">Контакты проекта</span></div>
-          <a class="person__tel" href="tel:+375296427440">+375 29 642 74 40</a><a class="person__ig" href="https://www.instagram.com/serbuns/" target="_blank" rel="noopener"><span class="instagram-icon" aria-hidden="true">◎</span> Instagram @serbuns</a>
+          <a class="person__tel" href="tel:+375296427440">+375 29 642 74 40</a><a class="person__ig social-link" href="https://www.instagram.com/serbuns/" target="_blank" rel="noopener" aria-label="Instagram @serbuns" data-i18n-aria="instagram_sergey" data-i18n-title="instagram_sergey"><svg class="social-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="4.2" stroke="currentColor" stroke-width="1.8"/><circle cx="17.5" cy="6.7" r="1" fill="currentColor"/></svg></a>
         </article>
         <article class="person reveal" style="--d:.2s">
           <div class="person__n"><b data-i18n="pr_d">Дмитрий</b><span data-i18n="pr_c2">Контакты проекта</span></div>
@@ -255,7 +256,7 @@
         </article>
       </div>
       <form class="form reveal" id="invForm">
-        <h3 class="h3" data-i18n="f_title">Оставьте контакт</h3>
+        <h3 class="h3" data-i18n="f_title">Оставьте контакты</h3>
         <label><span data-i18n="f_name">Имя</span><input name="name" type="text" autocomplete="name" maxlength="120" required></label>
         <label><span data-i18n="f_contact">Телефон или Telegram</span><input name="contact" type="text" autocomplete="tel" maxlength="160" required></label>
         <label><span data-i18n="f_msg">Сообщение (необязательно)</span><textarea name="msg" rows="3" maxlength="2000"></textarea></label>
@@ -276,9 +277,9 @@
       <span class="logo__txt"><b>LAKE VILLAGE</b><small>BELARUS</small></span>
     </div>
     <p class="script script--sm" data-i18n="slogan">Природа. Люди. События.</p>
-    <a class="ig" href="https://www.instagram.com/lakevillageblr/" target="_blank" rel="noopener">Instagram @lakevillageblr</a>
+    <a class="ig social-link" href="https://www.instagram.com/lakevillageblr/" target="_blank" rel="noopener" aria-label="Instagram — Lake Village Belarus" data-i18n-aria="instagram_project" data-i18n-title="instagram_project"><svg class="social-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="4.2" stroke="currentColor" stroke-width="1.8"/><circle cx="17.5" cy="6.7" r="1" fill="currentColor"/></svg></a>
   </div>
-  <p class="copy"><span data-i18n="rights">Все права защищены</span> © <span id="year">2026</span></p>
+  <p class="copy">© <span data-i18n="rights">Все права защищены</span></p>
 </footer>
 
 <!-- ============ MODALS ============ -->
@@ -286,7 +287,8 @@
   <button class="modal__x" data-close aria-label="Close">×</button>
   <video id="filmVideo" controls playsinline preload="none" poster="assets/video/film-poster.jpg"></video>
 </div>
-<script src="js/copy.js?v=5"></script><script src="js/main.js?v=8"></script><script src="js/hero-video.js?v=7"></script><script src="js/interface.js?v=7"></script><script src="js/masterplan.js?v=8"></script>
+<script src="js/copy.js?v=9"></script><script src="js/main.js?v=9"></script><script src="js/hero-video.js?v=7"></script><script src="js/interface.js?v=9"></script><script src="js/masterplan.js?v=8"></script>
 </body>
 </html>
+
 

@@ -244,7 +244,7 @@
   if (track) GAL.concat(GAL).forEach(function (n) {
     var im = document.createElement('img'); im.src = 'assets/img/' + n + '.webp'; im.alt = ''; im.loading = 'lazy'; im.decoding = 'async'; track.appendChild(im);
   });
-  $('#year').textContent = COPYRIGHT_YEAR;
+  if ($('#year')) $('#year').textContent = COPYRIGHT_YEAR;
   applyLang(lang);
   $$('.reveal').forEach(function (el) { if (!el.classList.contains('is-in')) io.observe(el); });
   $$('.panel').forEach(function (p) { panelIO.observe(p); });
@@ -255,3 +255,4 @@
   window.addEventListener('load', function () { collectPar(); onScroll(); });
   requestAnimationFrame(function () { document.body.classList.add('loaded'); if ($('#heroScript')) $('#heroScript').classList.add('is-in'); onScroll(); });
 })();
+

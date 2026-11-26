@@ -1,4 +1,4 @@
-/* Approved client copy and English translation. See docs/CLIENT-REVISIONS.md for factual review gates. */
+/* Approved client copy and English translation. */
 window.LV_COPY = {
   "ru": {
     "nav_team": "О нас",
@@ -84,7 +84,16 @@ window.LV_COPY = {
     "benefit_belarus_text": "Новые инвестиции, рабочие места, развитие туристической инфраструктуры, привлечение гостей и укрепление позиций страны на международном рынке туризма и событийной индустрии.",
     "tourism": "Развитие туризма сегодня — один из государственных приоритетов Беларуси. Президент Республики Беларусь Александр Лукашенко поставил задачу сделать туризм национальным проектом и максимально раскрыть его экономический потенциал.",
     "about_final": "Мы не начинаем с нуля. Мы переносим многолетний опыт успешной реализации сложных проектов в новое направление - премиальный загородный отдых и гостеприимство.",
-    "brand_final": "Большие идеи. Сильная команда. Новые возможности."
+    "brand_final": "Большие идеи. Сильная команда. Новые возможности.",
+    "h_lead": "Озеро, лес и дома с купелями. Ресторан и банкетный холл — для отдыха и самых важных моментов, которые хочется отметить красиво.",
+    "r1_p": "Большой банкетный комплекс на 350 гостей с панорамным остеклением, авторской кухней и летней террасой у воды.",
+    "now_p": "Проект находится на стадии разработки и согласования. Мы прорабатываем концепцию, земельный участок и поэтапный план реализации: от главных зон для событий — к проживанию и сервисам.",
+    "phases_title": "Этапы реализации:",
+    "phase_queue": "Очередь",
+    "f_title": "Оставьте контакты",
+    "instagram_project": "Instagram проекта Lake Village Belarus",
+    "instagram_alex": "Instagram Александра Сербуна",
+    "instagram_sergey": "Instagram Сергея"
   },
   "en": {
     "nav_team": "Our team",
@@ -170,6 +179,15 @@ window.LV_COPY = {
     "benefit_belarus_text": "New investment, jobs, tourism infrastructure, more visitors and a stronger position in the international tourism and events market.",
     "tourism": "Tourism development is one of Belarus’s national priorities. President of the Republic of Belarus Alexander Lukashenko has set the goal of making tourism a national project and fully realising its economic potential.",
     "about_final": "We are transferring many years of successfully delivering complex projects into a new field: premium country leisure and hospitality.",
-    "brand_final": "Big ideas. A strong team. New possibilities."
+    "brand_final": "Big ideas. A strong team. New possibilities.",
+    "h_lead": "A lake, a forest and houses with hot tubs. A restaurant and banquet hall for relaxing and celebrating life’s most important moments in style.",
+    "r1_p": "A large banquet complex for 350 guests with panoramic glazing, signature cuisine and a summer terrace by the water.",
+    "now_p": "The project is at the development and coordination stage. We are working on the concept, the land site and a phased implementation plan: from the main event spaces to accommodation and services.",
+    "phases_title": "Development phases:",
+    "phase_queue": "Phase",
+    "f_title": "Leave your contact details",
+    "instagram_project": "Lake Village Belarus on Instagram",
+    "instagram_alex": "Alexander Serbun on Instagram",
+    "instagram_sergey": "Sergey on Instagram"
   }
 };
