@@ -34,7 +34,7 @@
     background=Array.from(document.body.children).filter(function(el){return el!==modal&&!['SCRIPT','STYLE'].includes(el.tagName);}).map(function(el){var entry={el:el,inert:el.inert};el.inert=true;return entry;});
     document.body.style.overflow='hidden';
     var items=focusables(); if(items.length)items[0].focus({preventScroll:true});else{modal.tabIndex=-1;modal.focus();}
-    var hv=$('#heroVideo');if(hv)hv.pause();
+    document.dispatchEvent(new Event('lv:modalopened'));
   }
   window.LV_UI={open:open,close:close,isOpen:function(){return !!active;}};
   document.addEventListener('click',function(e){

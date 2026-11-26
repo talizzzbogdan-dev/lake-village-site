@@ -1,0 +1,16 @@
+{
+  "passed": 10,
+  "results": [
+    "chromium: autoplay resumes after automatic dialog",
+    "chromium: explicit pause survives dialog close",
+    "chromium: scrolling back resumes; six event mappings; desktop/mobile layout",
+    "chromium: mobile touch pause and resume with actual H.264 video",
+    "chromium: motion preference has working manual playback",
+    "chromium: data preference has working manual playback",
+    "chromium: policy-blocked autoplay recovers on a real click",
+    "chromium: real MP4 source fallback",
+    "chromium: real WebM source fallback",
+    "chromium: all-source failure shows poster and bounded retry"
+  ],
+  "errors": []
+}

@@ -130,7 +130,7 @@
     T[lang].events.forEach(function (e, i) {
       var d = document.createElement('div');
       d.className = 'ev reveal'; d.style.setProperty('--d', (i % 3) * 0.08 + 's');
-      d.innerHTML = '<img class="ev-image" src="assets/img/' + ['orangery','v-pier-dinner','v-restaurant','v-interior','v-reception','v-aerial-heli','pier-evening','pier-sunset','v-pier-aerial'][i] + '.webp" alt="" loading="lazy" decoding="async"><h4>' + e[0] + '</h4><p>' + e[1] + '</p>';
+      d.innerHTML = '<img class="ev-image" src="assets/img/' + ['orangery','events/corporate','v-restaurant','events/conference','events/presentation','events/forum','pier-evening','events/graduation','events/cultural'][i] + '.webp" alt="" loading="lazy" decoding="async"><h4>' + e[0] + '</h4><p>' + e[1] + '</p>';
       eg.appendChild(d);
       io.observe(d);
       d.addEventListener('pointermove', function (ev) {
@@ -254,18 +254,4 @@
   window.addEventListener('resize', onScroll);
   window.addEventListener('load', function () { collectPar(); onScroll(); });
   requestAnimationFrame(function () { document.body.classList.add('loaded'); if ($('#heroScript')) $('#heroScript').classList.add('is-in'); onScroll(); });
-  var hv = $('#heroVideo');
-  if (hv) {
-    var saveData = navigator.connection && navigator.connection.saveData;
-    var still = window.matchMedia('(prefers-reduced-motion:reduce)').matches || saveData;
-    if (still) { hv.removeAttribute('autoplay'); hv.pause(); }
-    else {
-      var p = hv.play(); if (p && p.catch) p.catch(function () {});
-      if ('IntersectionObserver' in window) new IntersectionObserver(function (en) {
-        en.forEach(function (e) { if (e.isIntersecting) { var q = hv.play(); if (q && q.catch) q.catch(function () {}); } else hv.pause(); });
-      }, { threshold: 0 }).observe(hv);
-      document.addEventListener('visibilitychange', function () { if (document.hidden) hv.pause(); else { var q = hv.play(); if (q && q.catch) q.catch(function () {}); } });
-    }
-  }
 })();
-

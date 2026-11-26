@@ -15,7 +15,7 @@
 <link rel="stylesheet" href="css/style.css?v=4">
 <link rel="stylesheet" href="css/palette.css?v=4">
 <link rel="stylesheet" href="css/v2.css?v=4">
-<link rel="stylesheet" href="css/revisions.css?v=6">
+<link rel="stylesheet" href="css/revisions.css?v=7">
 </head>
 <body class="v2">
 <div class="progress" aria-hidden="true"><i></i></div>
@@ -60,6 +60,7 @@
         <button class="btn btn--gold" data-film><svg viewBox="0 0 24 24" width="16" height="16"><path d="M7 4.5v15l13-7.5z" fill="currentColor"/></svg><span data-i18n="h_film">Смотреть фильм</span></button>
         <a class="btn btn--ghost" href="#investors" data-i18n="nav_inv">Инвесторам</a>
       </div>
+      <button type="button" class="hero-video-toggle" id="heroVideoToggle" aria-controls="heroVideo">Включить фоновое видео</button><span class="visually-hidden" id="heroVideoStatus" role="status" aria-live="polite"></span>
       <div class="scroll-hint" aria-hidden="true"><i></i><span data-i18n="h_scroll">листайте</span></div>
     </article>
 
@@ -83,9 +84,11 @@
     <div class="v2bg" aria-hidden="true"></div>
     <div class="vframe">
       <div class="vwrap">
-        <video id="heroVideo" autoplay muted loop playsinline preload="metadata" poster="assets/video/hero-poster.jpg">
-          <source src="assets/video/hero.webm" type="video/webm">
+        <img class="hero-video-fallback" src="assets/video/hero-poster.jpg" alt="" aria-hidden="true">
+        <video id="heroVideo" muted loop playsinline webkit-playsinline preload="none" aria-hidden="true" tabindex="-1" poster="assets/video/hero-poster.jpg">
+          <source src="assets/video/hero-compatible.mp4" type="video/mp4">
           <source src="assets/video/hero.mp4" type="video/mp4">
+          <source src="assets/video/hero.webm" type="video/webm">
         </video>
         <i class="corner c1"></i><i class="corner c2"></i><i class="corner c3"></i><i class="corner c4"></i>
       </div>
@@ -283,7 +286,7 @@
   <button class="modal__x" data-close aria-label="Close">×</button>
   <video id="filmVideo" controls playsinline preload="none" poster="assets/video/film-poster.jpg"></video>
 </div>
-<script src="js/copy.js?v=5"></script><script src="js/main.js?v=5"></script><script src="js/interface.js?v=5"></script><script src="js/masterplan.js?v=5"></script>
+<script src="js/copy.js?v=5"></script><script src="js/main.js?v=7"></script><script src="js/hero-video.js?v=7"></script><script src="js/interface.js?v=7"></script><script src="js/masterplan.js?v=5"></script>
 </body>
 </html>
 
