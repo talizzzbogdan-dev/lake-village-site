@@ -90,7 +90,7 @@ window.LV_COPY = {
     "now_p": "Проект находится на стадии разработки и согласования. Мы прорабатываем концепцию, земельный участок и поэтапный план реализации: от главных зон для событий — к проживанию и сервисам.",
     "phases_title": "Этапы реализации:",
     "phase_queue": "Очередь",
-    "f_title": "Оставьте контакты",
+    "f_title": "Обсудить инвестиции и партнёрство 🤝",
     "instagram_project": "Instagram проекта Lake Village Belarus",
     "instagram_alex": "Instagram Александра Сербуна",
     "instagram_sergey": "Instagram Сергея"
@@ -185,7 +185,7 @@ window.LV_COPY = {
     "now_p": "The project is at the development and coordination stage. We are working on the concept, the land site and a phased implementation plan: from the main event spaces to accommodation and services.",
     "phases_title": "Development phases:",
     "phase_queue": "Phase",
-    "f_title": "Leave your contact details",
+    "f_title": "Discuss investment and partnership 🤝",
     "instagram_project": "Lake Village Belarus on Instagram",
     "instagram_alex": "Alexander Serbun on Instagram",
     "instagram_sergey": "Sergey on Instagram"
