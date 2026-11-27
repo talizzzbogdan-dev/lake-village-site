@@ -21,8 +21,8 @@ window.LV_COPY = {
     "iv_model": "Финансовую модель и условия партнёрства представим лично.",
     "iv_cta": "Обсудить инвестиции →",
     "pr_alex": "Александр Сербун",
-    "pr_c": "Команда проекта",
-    "pr_c2": "Команда проекта",
+    "pr_c": "Продюсер событий, шоу и специальных проектов.",
+    "pr_c2": "Строительство и технические вопросы.",
     "f_send": "Продолжить в Telegram →",
     "f_notice": "Заявка откроется в Telegram. Нажмите «Отправить» в чате с Александром.",
     "f_ok": "Текст подготовлен. Отправьте его в Telegram — заявка ещё не отправлена.",
@@ -116,8 +116,8 @@ window.LV_COPY = {
     "iv_model": "We will present the financial model and partnership terms in person.",
     "iv_cta": "Discuss investment →",
     "pr_alex": "Alexander Serbun",
-    "pr_c": "Project team",
-    "pr_c2": "Project team",
+    "pr_c": "Producer of events, shows and special projects.",
+    "pr_c2": "Construction and technical matters.",
     "f_send": "Continue in Telegram →",
     "f_notice": "Your enquiry will open in Telegram. Press Send in your chat with Alexander.",
     "f_ok": "Your message is ready. Send it in Telegram — your enquiry has not been sent yet.",
@@ -191,3 +191,6 @@ window.LV_COPY = {
     "instagram_sergey": "Sergey on Instagram"
   }
 };
+
+window.LV_COPY.ru.pr_d = 'Дима';
+window.LV_COPY.en.pr_d = 'Dima';
