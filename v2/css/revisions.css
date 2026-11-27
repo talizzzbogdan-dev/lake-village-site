@@ -146,3 +146,14 @@ section[id],form[id]{scroll-margin-top:84px}
 .about-prose .priority-callout{font-family:var(--serif);font-size:clamp(24px,2.4vw,36px);line-height:1.38;padding:30px;border:1px solid var(--line);border-left:3px solid var(--gold);background:rgba(217,180,108,.07);color:var(--cream)}
 .priority-callout--final{color:var(--gold2)!important}
 @media(max-width:768px){.about-priorities{grid-template-columns:1fr}.about-prose .priority-callout{padding:24px}.steps li{gap:16px}.steps b{min-width:60px}}
+
+/* Contact portraits beside the project team's details. */
+.people .person{grid-template-columns:minmax(0,1fr) clamp(88px,10vw,132px);gap:12px 22px;align-content:center}
+.people .person__photo{grid-column:2;grid-row:1/4;align-self:center;width:100%;aspect-ratio:3/4;height:auto;object-fit:cover;object-position:center top;border-radius:3px}
+.people .person__n,.people .person__tel,.people .person__ig.social-link{grid-column:1;min-width:0}
+.people .person__n{grid-row:1}
+.people .person__tel{grid-row:2;font-size:clamp(19px,2.1vw,26px)}
+.people .person__ig.social-link{grid-row:3}
+.people .person__n span{display:block;margin-top:8px;line-height:1.45;letter-spacing:.02em}
+@media(max-width:560px){.people .person{padding:22px 18px;grid-template-columns:minmax(0,1fr) 92px;column-gap:14px}.people .person__n b{font-size:25px}.people .person__n span{font-size:13px}.people .person__tel{font-size:20px}}
+@media(max-width:360px){.people .person{grid-template-columns:minmax(0,1fr) 76px;padding:18px 14px;column-gap:10px}.people .person__n b{font-size:23px}.people .person__tel{font-size:18px}}
